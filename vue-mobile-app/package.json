@@ -1,0 +1,28 @@
+{
+  "name": "vue-mobile-app",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "start": "npm run serve"
+  },
+  "dependencies": {
+    "animejs": "^3.1.0",
+    "axios": "^0.19.2",
+    "core-js": "^3.6.4",
+    "lodash": "^4.17.15",
+    "vant": "^2.5.9",
+    "vue": "^2.6.11",
+    "vue-router": "^3.1.5",
+    "vuex": "^3.1.2"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~4.2.0",
+    "@vue/cli-plugin-router": "~4.2.0",
+    "@vue/cli-plugin-vuex": "~4.2.0",
+    "@vue/cli-service": "~4.2.0",
+    "babel-plugin-import": "^1.13.0",
+    "vue-template-compiler": "^2.6.11"
+  }
+}
