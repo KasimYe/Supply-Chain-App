@@ -1,28 +1,39 @@
 <template>
   <div class="navbar">
-    <van-nav-bar :title="currentPage.title" :left-arrow="currentPage.title!=='主页'">
+    <van-nav-bar :title="currentPage.title" :left-arrow="currentPage.title!=='主页'" fixed>
       <template #right>
-        <van-icon name="bars" size="28" @click="showSideBar" />
+        <van-icon name="bars" size="28" @click="showPopup" />
       </template>
     </van-nav-bar>
-    <van-sidebar v-model="currentPage.router" v-show="sideBarShow">
-      <van-sidebar-item :title="menu.name" v-for="menu in menus" :key="menu.id" />
-    </van-sidebar>
+    <van-popup v-model="show" position="left">
+      <van-sidebar class="sidebar" v-model="currentPage.router">
+        <van-sidebar-item :title="menu.name" v-for="menu in menus" :key="menu.id" />
+      </van-sidebar>
+    </van-popup>
   </div>
 </template>
 
 <script>
-import { NavBar, Icon, Sidebar, SidebarItem } from "vant";
+import { NavBar, Icon, Sidebar, SidebarItem, Popup } from "vant";
 import { mapGetters, mapState, mapActions } from "vuex";
 export default {
   components: {
     [NavBar.name]: NavBar,
     [Icon.name]: Icon,
     [Sidebar.name]: Sidebar,
-    [SidebarItem.name]: SidebarItem
+    [SidebarItem.name]: SidebarItem,
+    [Popup.name]: Popup
+  },
+  data() {
+    return {
+      show: false
+    };
   },
   methods: {
-    ...mapActions(["showSideBar"])
+    ...mapActions(["showSideBar", "closeSideBar"]),
+    showPopup() {
+      this.show = true;
+    }
   },
   computed: {
     ...mapState(["menus", "sideBarShow"]),
@@ -30,3 +41,10 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+.sidebar{
+  width: 200px;
+  text-align: center;
+}
+</style>

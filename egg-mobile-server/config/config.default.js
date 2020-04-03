@@ -29,6 +29,20 @@ module.exports = appInfo => {
     allowMethods: "GET,HEAD,PUT,POST,DELETE,PATCH"
   };
 
+  config.sequelize = {
+    dialect: "mssql",
+    host: "192.168.0.2",
+    port: 1400,
+    database: "egg-supply-chain-chunyu",
+    username: "sa",
+    password: "abc123",
+    dialectOptions: {
+      options: {
+        trustServerCertificate: true
+      }
+    }
+  };
+
   // add your user config here
   const userConfig = {
     // myAppName: 'egg',

@@ -31,3 +31,8 @@ export const login = ({ commit }, data) => {
 export const showSideBar=(context)=>{
   context.commit("CHANGE_SIDEBAR_DISPLAY");
 }
+
+// 关闭侧边导航菜单栏
+export const closeSideBar=(context)=>{  
+  context.commit("HIDE_SIDEBAR_DISPLAY");
+}
