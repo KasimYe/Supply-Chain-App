@@ -29,18 +29,29 @@ module.exports = appInfo => {
     allowMethods: "GET,HEAD,PUT,POST,DELETE,PATCH"
   };
 
+  config.jwt = {
+    secret: "123456"
+  };
+
+  // config.sequelize = {
+  //   dialect: "mssql",
+  //   host: "192.168.0.2",
+  //   port: 1400,
+  //   database: "egg-supply-chain-chunyu",
+  //   username: "sa",
+  //   password: "abc123",
+  //   dialectOptions: {
+  //     options: {
+  //       trustServerCertificate: true
+  //     }
+  //   }
+  // };
   config.sequelize = {
-    dialect: "mssql",
-    host: "192.168.0.2",
-    port: 1400,
+    username: "chunyukeji",
+    password: "chunyukeji",
     database: "egg-supply-chain-chunyu",
-    username: "sa",
-    password: "abc123",
-    dialectOptions: {
-      options: {
-        trustServerCertificate: true
-      }
-    }
+    host: "127.0.0.1",
+    dialect: "mysql"
   };
 
   // add your user config here

@@ -1,9 +1,8 @@
 const Controller = require("egg").Controller;
 
 class UserController extends Controller {
-  async index() {
+  async index() {  
     const { request, response, service } = this.ctx;
-    console.log("body:", request.body);
     try {
       this.ctx.validate(
         {
@@ -13,14 +12,15 @@ class UserController extends Controller {
         request.body
       );
       const body = request.body;
-      response.body = {
-        userid: 123,
-        username: body.username,
-        password: body.password
-      };
+      response.body = await service.api.users.login(body);
     } catch (error) {
       response.body = error;
     }
+  }
+
+  async find() {
+    const { response, service } = this.ctx;
+    response.body = await service.api.users.list();
   }
 
   async list() {
@@ -43,7 +43,6 @@ class UserController extends Controller {
 
   async create() {
     const { request, response, service } = this.ctx;
-    console.log(request.body);
     this.ctx.validate(
       {
         login_id: { type: "string", required: true },

@@ -1,0 +1,23 @@
+@URI=http://127.0.0.1:7001/api/
+###
+GET {{URI}}users
+###
+POST {{URI}}user HTTP/1.1
+content-type: application/json
+
+{
+    "login_id": "sample1",
+    "password": "123456",
+    "name":"ADMIN",
+    "age":12,
+    "mobile":"12345678902",
+    "status":true
+}
+###
+POST {{URI}}user/login HTTP/1.1
+content-type: application/json
+
+{
+    "username": "sample1",
+    "password": "123456"
+}
