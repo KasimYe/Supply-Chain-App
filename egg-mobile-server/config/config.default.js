@@ -16,8 +16,22 @@ module.exports = appInfo => {
   config.keys = appInfo.name + "_1585707221695_6673";
 
   // add your middleware config here
-  config.middleware = ["auth"];
-
+  config.middleware = ["errorHandler", "auth", "responseHandler"];
+  // 为中间件过滤请求
+  config.auth = {
+    enable: true,
+    match: [/\/api\//],
+    secret: config.keys
+  };
+  config.errorHandler = {
+    enable: true,
+    match: [/\/api\//]
+  };
+  config.responseHandler = {
+    enable: true,
+    match: [/\/api\//]
+  };
+  
   config.security = {
     csrf: {
       enable: false
@@ -27,10 +41,6 @@ module.exports = appInfo => {
   config.cors = {
     origin: "*",
     allowMethods: "GET,HEAD,PUT,POST,DELETE,PATCH"
-  };
-
-  config.jwt = {
-    secret: "123456"
   };
 
   // config.sequelize = {

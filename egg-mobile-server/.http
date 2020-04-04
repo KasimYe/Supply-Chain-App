@@ -4,13 +4,14 @@ GET {{URI}}users
 ###
 POST {{URI}}user HTTP/1.1
 content-type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEiLCJpYXQiOjE1ODU5Nzg0NzR9.T-rtUJhAIVXrnwfZ2CjeCcJctC3Vr3cHAn1lSr4Zu8A
 
 {
-    "login_id": "sample1",
+    "login_id": "sample5",
     "password": "123456",
     "name":"ADMIN",
     "age":12,
-    "mobile":"12345678902",
+    "mobile":"123",
     "status":true
 }
 ###

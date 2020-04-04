@@ -19,7 +19,7 @@ class UserController extends Controller {
   }
 
   async find() {
-    const { response, service } = this.ctx;
+    const { response, service } = this.ctx;    
     response.body = await service.api.users.list();
   }
 
