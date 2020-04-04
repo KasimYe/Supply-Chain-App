@@ -7,11 +7,11 @@ content-type: application/json
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEiLCJpYXQiOjE1ODU5Nzg0NzR9.T-rtUJhAIVXrnwfZ2CjeCcJctC3Vr3cHAn1lSr4Zu8A
 
 {
-    "login_id": "sample5",
+    "login_id": "admin",
     "password": "123456",
     "name":"ADMIN",
     "age":12,
-    "mobile":"123",
+    "mobile":"123666",
     "status":true
 }
 ###
@@ -22,3 +22,5 @@ content-type: application/json
     "username": "sample1",
     "password": "123456"
 }
+###
+GET {{URI}}menus HTTP/1.1

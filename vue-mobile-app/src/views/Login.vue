@@ -55,19 +55,19 @@ export default {
   },
   methods: {
     ...mapActions(["login"]),
-    loginIn() {      
+    loginIn() {
       const data = { username: this.username, password: this.password };
       this.login(data)
         .then(res => {
-          if (res) {
+          if (res.status === 200) {
             Toast.success("登录成功");
             this.$router.push("/home");
           } else {
-            Toast.fail("用户名或密码错误");
+            Toast.fail(res.message);
           }
         })
         .catch(res => {
-          Toast.fail("用户名或密码错误");
+          Toast.fail(String(res));
         });
     },
     emailFocus() {

@@ -11,4 +11,6 @@ module.exports = app => {
   router.post("/api/user", controller.api.users.create);
   router.put("/api/user/:id", controller.api.users.update);
   router.post("/api/user/login", controller.api.users.index);
+
+  router.get("/api/menus", controller.api.menus.list);
 };
