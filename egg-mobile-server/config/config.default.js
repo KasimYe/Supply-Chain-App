@@ -5,7 +5,7 @@
 /**
  * @param {Egg.EggAppInfo} appInfo app info
  */
-module.exports = appInfo => {
+module.exports = (appInfo) => {
   /**
    * built-in config
    * @type {Egg.EggAppConfig}
@@ -21,26 +21,31 @@ module.exports = appInfo => {
   config.auth = {
     enable: true,
     match: [/\/api\//],
-    secret: config.keys
+    secret: config.keys,
   };
   config.errorHandler = {
     enable: true,
-    match: [/\/api\//]
+    match: [/\/api\//],
   };
   config.responseHandler = {
     enable: true,
-    match: [/\/api\//]
+    match: [/\/api\//],
   };
-  
+
+  //plugin set
+  exports.validate = {
+    convert: true,
+    // validateRoot: false,
+  };
   config.security = {
     csrf: {
-      enable: false
-    }
+      enable: false,
+    },
   };
 
   config.cors = {
     origin: "*",
-    allowMethods: "GET,HEAD,PUT,POST,DELETE,PATCH"
+    allowMethods: "GET,HEAD,PUT,POST,DELETE,PATCH",
   };
 
   // config.sequelize = {
@@ -61,7 +66,39 @@ module.exports = appInfo => {
     password: "chunyukeji",
     database: "egg-supply-chain-chunyu",
     host: "127.0.0.1",
-    dialect: "mysql"
+    dialect: "mysql",
+  };
+
+  config.swaggerdoc = {
+    dirScanner: "./app/controller",
+    apiInfo: {
+      title: "egg-swagger",
+      description: "swagger-ui for egg",
+      version: "1.0.0",
+    },
+    schemes: ["http", "https"],
+    consumes: ["application/json"],
+    produces: ["application/json"],
+    securityDefinitions: {
+      // apikey: {
+      //   type: 'apiKey',
+      //   name: 'clientkey',
+      //   in: 'header',
+      // },
+      // oauth2: {
+      //   type: 'oauth2',
+      //   tokenUrl: 'http://petstore.swagger.io/oauth/dialog',
+      //   flow: 'password',
+      //   scopes: {
+      //     'write:access_token': 'write access_token',
+      //     'read:access_token': 'read access_token',
+      //   },
+      // },
+    },
+    enableSecurity: false,
+    // enableValidate: true,
+    routerMap: false,
+    enable: true,
   };
 
   // add your user config here
@@ -71,6 +108,6 @@ module.exports = appInfo => {
 
   return {
     ...config,
-    ...userConfig
+    ...userConfig,
   };
 };

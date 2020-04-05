@@ -8,14 +8,18 @@ module.exports = {
   // }
   validate: {
     enable: true,
-    package: "egg-validate"
+    package: "egg-validate",
   },
   cors: {
     enable: true,
-    package: "egg-cors"
+    package: "egg-cors",
   },
   sequelize: {
     enable: true,
-    package: "egg-sequelize"
-  }
+    package: "egg-sequelize",
+  },
+  swaggerdoc: {
+    enable: true,
+    package: "egg-swagger-doc-feat",
+  },
 };
