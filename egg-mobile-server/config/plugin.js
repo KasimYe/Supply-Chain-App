@@ -22,4 +22,8 @@ module.exports = {
     enable: true,
     package: "egg-swagger-doc-feat",
   },
+  bcrypt: {
+    enable: true,
+    package: "egg-bcrypt",
+  },
 };

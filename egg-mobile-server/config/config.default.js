@@ -47,27 +47,29 @@ module.exports = (appInfo) => {
     origin: "*",
     allowMethods: "GET,HEAD,PUT,POST,DELETE,PATCH",
   };
-
-  // config.sequelize = {
-  //   dialect: "mssql",
-  //   host: "192.168.0.2",
-  //   port: 1400,
-  //   database: "egg-supply-chain-chunyu",
-  //   username: "sa",
-  //   password: "abc123",
-  //   dialectOptions: {
-  //     options: {
-  //       trustServerCertificate: true
-  //     }
-  //   }
-  // };
+  config.bcrypt = {
+    saltRounds: 10 // default 10
+  }
   config.sequelize = {
-    username: "chunyukeji",
-    password: "chunyukeji",
+    dialect: "mssql",
+    host: "192.168.0.2",
+    port: 1400,
     database: "egg-supply-chain-chunyu",
-    host: "127.0.0.1",
-    dialect: "mysql",
+    username: "sa",
+    password: "abc123",
+    dialectOptions: {
+      options: {
+        trustServerCertificate: true
+      }
+    }
   };
+  // config.sequelize = {
+  //   username: "chunyukeji",
+  //   password: "chunyukeji",
+  //   database: "egg-supply-chain-chunyu",
+  //   host: "127.0.0.1",
+  //   dialect: "mysql",
+  // };
 
   config.swaggerdoc = {
     dirScanner: "./app/controller",

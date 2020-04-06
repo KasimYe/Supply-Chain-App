@@ -1,10 +1,11 @@
 {
   "development": {
-    "username": "chunyukeji",
-    "password": "chunyukeji",
+    "username": "sa",
+    "password": "abc123",
     "database": "egg-supply-chain-chunyu",
-    "host": "127.0.0.1",
-    "dialect": "mysql",
+    "host": "192.168.0.2",
+    "port":1400,
+    "dialect": "mssql",
     "operatorsAliases": false
   },
   "test": {

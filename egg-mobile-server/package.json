@@ -7,8 +7,8 @@
     "declarations": true
   },
   "dependencies": {
-    "bcrypt": "^4.0.1",
     "egg": "^2.15.1",
+    "egg-bcrypt": "^1.1.0",
     "egg-cors": "^2.2.3",
     "egg-errors": "^2.1.1",
     "egg-scripts": "^2.11.0",
@@ -16,7 +16,6 @@
     "egg-swagger-doc-feat": "^2.2.13",
     "egg-validate": "^2.0.2",
     "jsonwebtoken": "^8.5.1",
-    "mysql2": "^2.1.0",
     "tedious": "^8.2.0"
   },
   "devDependencies": {

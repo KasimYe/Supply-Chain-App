@@ -1,17 +1,18 @@
 @URI=http://127.0.0.1:7001/api/
+@AUTH=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEiLCJpYXQiOjE1ODYxNDY5Mzh9.Y0lLXRytnzD9KErFGHTDt_NJqqX1EFYnDf1tKSUg5ng
 ###
 GET {{URI}}users
 ###
 POST {{URI}}user HTTP/1.1
 content-type: application/json
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEiLCJpYXQiOjE1ODU5Nzg0NzR9.T-rtUJhAIVXrnwfZ2CjeCcJctC3Vr3cHAn1lSr4Zu8A
+Authorization: {{AUTH}}
 
 {
-    "login_id": "admin",
+    "login_id": "admin2",
     "password": "123456",
     "name":"ADMIN",
     "age":12,
-    "mobile":"123666",
+    "mobile":"1236663",
     "status":true
 }
 ###
@@ -19,7 +20,7 @@ POST {{URI}}user/login HTTP/1.1
 content-type: application/json
 
 {
-    "username": "sample1",
+    "username": "admin",
     "password": "123456"
 }
 ###
