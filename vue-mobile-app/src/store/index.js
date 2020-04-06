@@ -20,8 +20,9 @@ export default new Vuex.Store({
     menus: [
       {
         id: 1,
-        src: require("@/assets/image/icon/tongxunlu.png"),
-        name: "调度"
+        src: require("@/assets/image/icon/tongxunlu.png"),        
+        name: "主页",
+        router:"/main/home"
       },
       { id: 2, src: require("@/assets/image/icon/weixin.png"), name: "装车" },
       { id: 3, src: require("@/assets/image/icon/shizhong.png"), name: "追踪" },
@@ -29,7 +30,8 @@ export default new Vuex.Store({
       {
         id: 5,
         src: require("@/assets/image/icon/liulanqi.png"),
-        name: "配送"
+        name: "配送",
+        router:"/main/handover"
       },
       {
         id: 6,

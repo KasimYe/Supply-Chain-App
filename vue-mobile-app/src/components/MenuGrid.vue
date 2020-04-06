@@ -11,7 +11,7 @@
     <van-cell-group class="menu-cell-group">
       <van-divider class="divider">快速导航</van-divider>
       <van-grid :border="false" :gutter="10" :column-num="3" square>
-        <van-grid-item v-for="menu in quickMenus" :key="menu.id">
+        <van-grid-item v-for="menu in quickMenus" :key="menu.id" v-bind:to="menu.router">
           <div class="img">
             <img :src="menu.src" />
           </div>
@@ -23,7 +23,7 @@
 </template>
 
 <script>
-import { Grid, GridItem, CellGroup,Divider } from "vant";
+import { Grid, GridItem, CellGroup, Divider } from "vant";
 import { mapGetters } from "vuex";
 export default {
   components: {

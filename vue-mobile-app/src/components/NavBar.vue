@@ -7,7 +7,13 @@
     </van-nav-bar>
     <van-popup v-model="show" position="left">
       <van-sidebar class="sidebar" v-model="currentPage.router">
-        <van-sidebar-item :title="menu.name" v-for="menu in menus" :key="menu.id" />
+        <van-sidebar-item
+          :title="menu.name"
+          v-for="menu in menus"
+          :key="menu.id"
+          v-bind:to="menu.router"
+          @click="hidePopup"
+        />
       </van-sidebar>
     </van-popup>
   </div>
@@ -33,6 +39,9 @@ export default {
     ...mapActions(["showSideBar", "closeSideBar"]),
     showPopup() {
       this.show = true;
+    },
+    hidePopup(){
+      this.show = false;
     }
   },
   computed: {
@@ -43,7 +52,7 @@ export default {
 </script>
 
 <style scoped>
-.sidebar{
+.sidebar {
   width: 200px;
   text-align: center;
 }

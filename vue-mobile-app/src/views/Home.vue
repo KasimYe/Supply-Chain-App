@@ -1,7 +1,7 @@
 <template>
   <div class="home">
-    <nav-bar />
-    <van-notice-bar class="notic-bar" :text="notice" left-icon="volume-o" />
+    <!-- <nav-bar /> -->
+    <van-notice-bar v-bind:text="notice" left-icon="volume-o" />
     <menu-grid />
     <task-notice-bar />
   </div>
@@ -9,17 +9,14 @@
 
 <script>
 import MenuGrid from "@/components/MenuGrid.vue";
-import NavBar from "@/components/NavBar.vue";
+// import NavBar from "@/components/NavBar.vue";
 import TaskNoticeBar from "@/components/TaskNoticeBar.vue";
-import { CellGroup, Divider, NoticeBar, Dialog } from "vant";
+import { NoticeBar, Dialog } from "vant";
 export default {
   name: "Home",
   components: {
-    "nav-bar": NavBar,
     "menu-grid": MenuGrid,
     "task-notice-bar": TaskNoticeBar,
-    [CellGroup.name]: CellGroup,
-    [Divider.name]: Divider,
     [NoticeBar.name]: NoticeBar,
     [Dialog.name]: Dialog
   },
@@ -41,7 +38,7 @@ export default {
         })
         .catch(() => {
           // on cancel
-        });      
+        });
     }
   },
   mounted() {

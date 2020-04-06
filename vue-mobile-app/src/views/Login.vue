@@ -61,7 +61,7 @@ export default {
         .then(res => {
           if (res.status === 200) {
             Toast.success("登录成功");
-            this.$router.push("/home");
+            this.$router.push("/main/home");
           } else {
             Toast.fail(res.message);
           }

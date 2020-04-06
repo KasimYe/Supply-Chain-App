@@ -1,7 +1,9 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Login from "../views/Login.vue";
+import Main from "../views/Main.vue";
 import Home from "../views/Home.vue";
+import Handover from "../views/Handover";
 
 Vue.use(VueRouter);
 
@@ -12,9 +14,21 @@ const routes = [
     component: Login
   },
   {
-    path: "/home",
-    name: "Home",
-    component: Home
+    path: "/main",
+    name: "Main",
+    component: Main,
+    children: [
+      {
+        path: "home",
+        name: "Home",
+        component: Home
+      },
+      {
+        path: "handover",
+        name: "Handover",
+        component: Handover
+      }
+    ]
   }
 ];
 
